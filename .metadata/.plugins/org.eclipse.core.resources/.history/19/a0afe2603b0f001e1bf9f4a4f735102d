@@ -1,0 +1,10 @@
+package com.example.demo.heroes;
+
+import org.springframework.stereotype.Component;
+
+@Component("hulk")
+public class Hulk implements Heroes {
+	@Override
+	public void help() {
+	}
+}

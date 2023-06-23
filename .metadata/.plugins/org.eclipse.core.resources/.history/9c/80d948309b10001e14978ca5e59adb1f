@@ -1,0 +1,10 @@
+package com.example.demo.model.entity;
+
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+public class City {
+	@ManyToOne(optional = false) 
+	@JoinColumn(name="country_code") 
+	private Country coun;
+}

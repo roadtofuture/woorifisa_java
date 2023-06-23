@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="com.woorifis"/>
+			<item value="com.woorifis.test"/>
+			<item value="java_day5"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="test"/>
+			<item value="web_day3"/>
+			<item value="web_day2"/>
+			<item value="PreWebTest"/>
+			<item value="java_day5"/>
+			<item value="PreWeb"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

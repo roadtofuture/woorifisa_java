@@ -1,0 +1,10 @@
+package com.example.demo.model.entity;
+
+import java.util.List;
+
+import jakarta.persistence.OneToMany;
+
+public class Country {
+	@OneToMany(mappedBy = "coun")
+	List<City> cities;
+}

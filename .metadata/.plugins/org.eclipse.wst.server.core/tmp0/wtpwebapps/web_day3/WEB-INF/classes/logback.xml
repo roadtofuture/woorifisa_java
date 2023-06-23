@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 콘솔 로그 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+        <encoder>
+            <!-- <pattern>[%d{MM-dd HH:mm:ss:ns}] %highlight([%-5p]) [%c{1}.%M-%3L] %m %n</pattern> -->
+            <pattern>[%d{HH:mm:ss}] %highlight([%-5p]) [%c{1}.%M-%3L] %m %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SIMPLE_STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+        <encoder>
+            <!-- <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern> -->
+            <pattern>[%d{HH:mm:ss}] %boldMagenta([WOORI:]) %highlight([%-5p]) [%c{1}.%M-%3L] %boldBlue(%m) %n</pattern>
+        </encoder>
+    </appender>
+
+
+
+    <!-- root 로거 기본 설정 -->
+    <!--logger name="com.quietjun" level="trace" additivity="false">
+        <appender-ref ref="SIMPLE_STDOUT" />
+    </logger-->
+    <!-- <logger name="org.hibernate.type" level="trace"></logger> -->
+    <!-- 심각도 : trace > debug > info > warn > error -->
+    <root level="trace">
+        <appender-ref ref="SIMPLE_STDOUT" />
+    </root>
+</configuration> 

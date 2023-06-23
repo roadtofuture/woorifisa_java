@@ -1,0 +1,38 @@
+package com.example.demo.model;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.entity.City;
+import com.example.demo.model.entity.Country;
+import com.example.demo.model.repo.CityRepo;
+import com.example.demo.model.repo.CountryRepo;
+
+import jakarta.transaction.Transactional;
+
+@Service //비즈니스 로직의 출발점
+public class RepoService {
+	@Autowired
+	CityRepo cityrepo;
+	
+	@Autowired
+	CountryRepo countryrepo;
+	
+	
+	//한 도시를 등록하면 그 도시의 자매도시도 등록한다.
+	@Transactional
+	public void saveSity(String countryCode, String name) {
+		
+		//1.  국가를 데려온다.
+		Country country = CountryRepo.findById(countryCode).get();
+		
+		//2. 등록할 도시를 만든다. 
+		City city = City.builder(), name(name).countrycode(country).population(0).district("Asia").build();
+		
+		City city2 = City.builder(), name(name + "자매").countrycode(country).population(0).district("Asia").build();
+		
+		cityRepo.saveandFlush(city);
+		cityRepo.saveandFlush(city2);
+		
+	}
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#css {
+	color: blue;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<!-- client의 3요소는 html, css, javascript -->
+	<h1>뉴진스의 하입보이요</h1>
+	<ul>
+		<li>쿠키쿠키
+		<li id="css">내가만든쿠키
+		<li id="js">너를 위해 구웠지
+	</ul>
+</body>
+<script>
+	document.querySelector("#js").addEventListener("click", function(){
+		alert("화면 클릭")
+		});
+</script>
+</html>

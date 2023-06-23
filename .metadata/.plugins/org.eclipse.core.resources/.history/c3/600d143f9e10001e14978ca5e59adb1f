@@ -1,0 +1,21 @@
+package com.example.demo.model.entity;
+
+public class Country {
+
+	private long code;
+	private String name;
+	private String continent;
+	private String region;
+	private double surfaceArea;
+	private int indepYear;
+	private int population;
+	private double lifeExpectancy;
+	private double gnp;
+	private double gnpOld;
+	private String localName;
+	private String governmentForm;
+	private String headOfState;
+	private int capital;
+	private String code2;
+
+}

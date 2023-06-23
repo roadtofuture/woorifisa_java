@@ -1,0 +1,27 @@
+package com.example.demo.heroes;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
+@Component
+public class Avengers {
+
+	private Hulk hulk; //멤버변수 선언
+	private IronMan iman; 
+	
+	//new하긴 싫어서 주입받기로
+	
+	@Autowired //- 자동으로 연결되도록 
+	public Avengers(Hulk hulk) { 
+		this.hulk = hulk;		
+	} 
+	
+	@Autowired
+	public void setIronMan(IronMan iman) { 
+		this.iman = iman;
+	}
+
+
+	
+}

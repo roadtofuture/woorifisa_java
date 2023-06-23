@@ -1,0 +1,13 @@
+package com.example.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/city") //이 컨트롤러의 request prefix
+public class CityController {
+	@RequestMapping("/select")
+	public String selectCity(int no) {
+		return "";
+	}
+	}

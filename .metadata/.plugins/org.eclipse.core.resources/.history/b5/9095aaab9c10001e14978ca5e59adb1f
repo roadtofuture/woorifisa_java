@@ -1,0 +1,27 @@
+package com.example.demo.model.entity;
+
+import java.util.List;
+
+import jakarta.persistence.OneToMany;
+
+public class Country {
+
+	private long code;
+	private String name;
+	private String continent;
+	private String region;
+	private double surfaceArea;
+	private int indepYear;
+	private int population;
+	private double lifeExpectancy;
+	private double gnp;
+	private double gnpOld;
+	private String localName;
+	private String governmentForm;
+	private String headOfState;
+	private int capital;
+	private String code2;
+
+	@OneToMany(mappedBy = "coun")
+	List<City> cities;
+}

@@ -1,0 +1,38 @@
+package com.example.demo;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+import com.example.demo.model.entity.Dept;
+import com.example.demo.model.entity.Employee;
+
+import jakarta.persistence.EntityManager;
+
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = Replace.NONE)
+public class RelationTest {
+
+	@BeforeEach // beforeall: static하게 만들어야 하고모든 테스트 전에 한번만 실행하는 것, beforeeach: 각각의 테스트마다 한번
+	public void setup() {
+		Employee emp = Employee.builder().gender('M').managerNo(0).age(10).name("hong gil dong").build();
+		Dept dept = new Dept(0, "영업부");
+		emp.setDept(dept);
+		em.persist(dept);
+		em.persist(emp);
+	}
+
+	@Autowired
+	EntityManager em;
+
+	@Test
+	public void beanTest() {
+		Assertions.assertNotNull(em);
+
+	}
+
+}

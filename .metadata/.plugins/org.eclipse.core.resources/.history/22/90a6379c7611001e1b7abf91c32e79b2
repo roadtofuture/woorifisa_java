@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello</title>
+<link rel="stylesheet" href="/common.css">
+</head>
+<body>
+	<h1 id="title">Welcome!!!</h1>
+	안녕하세요 감사해요 잘있어요 다시만나요
+	<ul>
+	<li><a href = "/hello?name=hong">hello</a>
+	</ul>
+	<h1>도시 조회</h1>
+	<form method="get" action="/city/select">
+		<input type = "text" name= "no">
+		<input type="submit">
+	</form>
+</body>
+</html>

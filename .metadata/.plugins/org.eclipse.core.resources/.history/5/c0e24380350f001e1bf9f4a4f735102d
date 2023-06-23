@@ -1,0 +1,14 @@
+package com.example.demo.heroes;
+
+import org.springframework.stereotype.Component;
+
+
+
+	@Component("ironman")
+	public class IronMan implements Heroes {
+		@Override
+		public void help() {
+		}
+	}	
+
+

@@ -1,0 +1,22 @@
+package com.example.demo.model.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+public class City {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	@Column(columnDefinition = "char(35) not null default")
+	private String name;
+	@Column(columnDefinition = "char(20) not null default")
+	private String district;
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "country_code")
+	private Country coun;
+}

@@ -1,0 +1,17 @@
+#DB 접속 설정
+spring.datasource.url=jdbc:mysql://localhost:3306/jpatest
+spring.datasource.name=com.mysql.cj.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=1234 
+
+#Entity를 이용해서 테이블 형성 (현실에서는 거의 validate만 씀)
+spring.jpa.hibernate.ddl-auto=create
+
+#동작하는 sql문 보여주기
+spring.jpa.show-sql=true
+#sql 이쁘게
+spring.jpa.properties.hibernate.format_sql=true
+
+# sql 실행 파라미터 보이기 (로그 레벨 변경)
+logging.level.org.hibernate.orm.jdbc.bind=trace
+logging.level.com.example.demo=trace

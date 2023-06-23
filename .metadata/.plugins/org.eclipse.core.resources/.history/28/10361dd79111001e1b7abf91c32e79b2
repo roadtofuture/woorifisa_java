@@ -1,0 +1,36 @@
+package com.example.demo.model.dto;
+
+import com.example.demo.model.entity.Country;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+
+public class CityDto {
+
+	
+	private long id;
+	private String name;
+	private String district;
+	private long population;
+	
+	//연관 객체의 로딩 시점을 필요한 시점으로 한다. 
+	@ManyToOne(fetch = FetchType.LAZY) //시작하자마자 가져오는게 : EAGER, 필요할 때 가져와 : LAZY
+	@JoinColumn(name="countrycode") //foreign key설정
+	private Country countrycode; //country:연관관계의 객체 
+	
+
+}

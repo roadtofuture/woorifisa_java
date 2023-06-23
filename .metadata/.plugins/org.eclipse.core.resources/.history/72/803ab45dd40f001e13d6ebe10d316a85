@@ -1,0 +1,33 @@
+package com.example.demo.bean;
+
+import java.util.Calendar;
+
+public class SimpleBean2 implements SimpleBean{
+
+	@Override
+	public void setName(String name) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setNow(Calendar cal) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Calendar getNow() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
+
+// The type SimpleBean2 must implement the inherited abstract method SimpleBean.getName()

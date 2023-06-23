@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>로그인 성공</h1>
+	<%=session.getAttribute("loginName")%>님 반갑습니다.
+	<a href="/web_day3/login/loginform.jsp">처음으로</a>
+
+	<h2>위시리스트</h2>
+	<form action="/web_day3/cart" method="post">
+		<input type="text" name="product"> <input type="submit"
+			value="담기">
+
+	</form>
+
+	<h2>현재 장바구니 현황</h2>
+	<div>
+		<%
+		if (session.getAttribute("cart") != null) {
+		%>
+		<%=session.getAttribute("cart")%>
+		<%
+		} else {
+		%>
+		텅
+		<%
+		}
+		%>
+
+		<!-- cart이름을 가진 걸 불러올거기 때문에 세션도 cart라는 이름으로 저장해야함 -->
+	</div>
+	<form action="/web_day3/buy" method="post">
+		<input type="submit" value="구매하기">
+	</form>
+</body>
+</html>

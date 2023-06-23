@@ -1,0 +1,8 @@
+package com.example.demo.phone;
+
+public class GalaxyFold implements Phone {
+	@Override
+	public void call(String to) {
+		
+	}
+}

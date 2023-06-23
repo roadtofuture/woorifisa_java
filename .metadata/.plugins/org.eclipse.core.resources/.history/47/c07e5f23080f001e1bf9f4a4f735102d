@@ -1,0 +1,14 @@
+package com.example.demo.car;
+
+public class DriveCar {
+	//쓰고 싶다 - has a 관계 -> 멤버 변수로 관리 
+	Tesla car;
+	
+	public DriveCar() {
+		this.car = new Tesla();		
+	}
+	
+	public void move(String to) {
+		System.out.println(to+"로 gogogogogo");
+	}
+}

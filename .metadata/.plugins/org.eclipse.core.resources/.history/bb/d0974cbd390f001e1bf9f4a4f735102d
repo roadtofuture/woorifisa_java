@@ -1,0 +1,13 @@
+package com.example.demo.heroes;
+
+
+@SpringBootTest 
+public class AvengersTest {
+
+	
+		A
+	
+	public void beanTest() {
+		Assertions.
+	}
+}

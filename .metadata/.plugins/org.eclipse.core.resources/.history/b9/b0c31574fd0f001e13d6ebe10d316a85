@@ -1,0 +1,28 @@
+package com.example.demo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+import com.example.demo.model.entity.Employee;
+
+import jakarta.persistence.EntityManager;
+
+//@SpringBootTest
+@DataJpaTest //Spring Data Jpa 테스트 전용 클래스 : @Transactional : 들어간 것만 보고 확인하고 rollback 시키는 기능
+class Jpa1ApplicationTests {
+
+	@Autowired
+	EntityManager em;
+	
+	@Test
+	public void crudtest() {
+		//Employee를 만들어보자
+		Employee emp = Employee.builder().gender('M').managerNo(0)
+				.age(10)
+				.name("hong gil dong")
+				.build();
+		
+		em.persist(emp);
+	}
+}

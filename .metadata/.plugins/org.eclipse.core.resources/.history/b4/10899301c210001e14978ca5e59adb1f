@@ -1,0 +1,77 @@
+package com.example.demo;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+import com.example.demo.model.entity.City;
+import com.example.demo.model.entity.Country;
+import com.example.demo.model.repo.CityRepo;
+import com.example.demo.model.repo.CountryRepo;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = Replace.NONE)
+public class CityRepoTest {
+	@Autowired
+	CityRepo cityRepo;
+	@Autowired
+	CountryRepo countryRepo;
+
+	@Test
+	public void beanTest() {
+		log.debug("repo:{}", cityRepo.getClass().getName());
+	}
+
+	@Test
+	public void crudTest() {
+		// city가 포함될 country가 필요
+		Country c = countryRepo.findById("ABW").get();
+		long cnt = cityRepo.count();
+		log.debug("현재 건수: {}", cnt);
+
+		// create- 새로 추가할 도시 구성
+		City city = City.builder().name("내도시").countrycode(c).build();
+
+		cityRepo.saveAndFlush(city); // 저장 후 반영
+		long cnt2 = cityRepo.count();
+		Assertions.assertEquals(cnt + 1, cnt2);
+
+		// select
+		City selected = cityRepo.findById(city.getId()).get();
+		Assertions.assertEquals(city, selected);
+
+		// update
+		selected.setName("너네도시");
+		cityRepo.saveAndFlush(city); // 저장 후 반영
+
+		// select
+		City selected2 = cityRepo.findById(city.getId()).get();
+		Assertions.assertEquals(selected2.getName(), "너네도시");
+
+		// delete
+		cityRepo.delete(selected2);
+		cityRepo.flush();
+		Assertions.assertTrue(cityRepo.findById(city.getId()).isEmpty());
+
+	}
+
+	@Test
+	public void byNameTest() {
+		List<City> cities = cityRepo.findByNameLike("%at%");
+		Assertions.assertEquals(cities.size(), 216);
+		
+		City city = cities.get(0);
+		log.debug("이제 도시의 국가를 조회해보자.");
+		String countryName = city.getCountrycode().getName();
+		Assertions.assertEquals("Afghanistan", countryName);
+		
+	}
+}

@@ -1,0 +1,16 @@
+127.0.0.1 - - [15/Jun/2023:15:03:39 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:15:03:39 +0900] "GET /web_day2/WEB-INF/classes/com/woorifis/day2/controller/MakeGugu.java HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:15:03:39 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:15:20:51 +0900] "GET /web_day2/login.html HTTP/1.1" 200 537
+127.0.0.1 - - [15/Jun/2023:15:40:16 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:15:40:16 +0900] "GET /web_day2/WEB-INF/classes/com/woorifis/day2/controller/Login.java HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:15:42:20 +0900] "GET /web_day2/login.html HTTP/1.1" 200 545
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:15:42:29 +0900] "GET /web_day2/login?id=%EA%B9%80%EB%82%A8%EA%B8%B8&pass=1234 HTTP/1.1" 404 825
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:15:42:35 +0900] "GET /web_day2/login?id=%EA%B9%80%EB%82%A8%EA%B8%B8&pass=1234 HTTP/1.1" 404 825
+127.0.0.1 - - [15/Jun/2023:15:58:28 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:15:58:29 +0900] "GET /web_day2/Login HTTP/1.1" 200 54
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:15:58:47 +0900] "GET /web_day2/login.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:15:59:01 +0900] "POST /web_day2/login HTTP/1.1" 404 825
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:15:59:31 +0900] "POST /web_day2/login HTTP/1.1" 404 825
+127.0.0.1 - - [15/Jun/2023:16:00:23 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:16:00:29 +0900] "POST /web_day2/login HTTP/1.1" 404 825

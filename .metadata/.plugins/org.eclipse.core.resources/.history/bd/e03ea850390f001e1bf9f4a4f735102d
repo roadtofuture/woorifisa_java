@@ -1,0 +1,10 @@
+package com.example.demo;
+
+@SpringBoo
+public class AvengersTest {
+	
+	@Test
+	public void beanTest() {
+		
+	}
+}
