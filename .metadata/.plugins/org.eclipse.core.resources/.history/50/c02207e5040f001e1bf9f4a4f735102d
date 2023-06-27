@@ -1,5 +1,0 @@
-package phone;
-
-public interface Phone {
-	void call(String to);
-}

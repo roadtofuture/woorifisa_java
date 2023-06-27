@@ -50,4 +50,20 @@
 	</section>
 	<section name="BasicNewProjectResourceWizard">
 	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Java\Workspace\board"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\Users\SIA\Downloads\exam.zip"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.internal.views.markers.FiltersConfigurationDialog">
+		<item key="SELECTED_FILTER_GROUP" value="TODOs"/>
+		<list key="PREV_SELECTED_ELEMENTS">
+		</list>
+	</section>
 </section>

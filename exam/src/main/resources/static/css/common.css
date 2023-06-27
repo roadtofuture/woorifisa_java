@@ -1,0 +1,17 @@
+.center{
+    text-align: center;
+}
+
+#loginform{
+    display: flex;
+    justify-content: flex-end;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th{
+    border: 1px solid black;
+}

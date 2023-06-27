@@ -1,7 +1,0 @@
-package com.example.demo.car;
-
-public class Ferrari implements Car {
-	public void drive() {
-		System.out.println("페라리 나가신다!!!!!");
-	}
-}

@@ -1,6 +1,0 @@
-package com.example.demo.car;
-
-public class Tesla {
-	public void drive() {
-		System.out.println("테슬라 나가신다!!!!!");
-}
